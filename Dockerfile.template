@@ -1,5 +1,5 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
-RUN apt update && apt install flac ntpdate libav-tools -qy
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
+RUN apk update && apk add flac ffmpeg alsa-utils
 WORKDIR /app
 COPY . ./
 ENV UDEV=1
